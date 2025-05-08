@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { JSX, SVGProps } from "react";
-import ConnectButton from "@/components/ehex-ui/connect-button";
+import ConnectButton from "@/components/ehex/connect-button";
 import Link from "next/link";
 
 const Logo = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
