@@ -1,10 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
 import { JSX, SVGProps } from "react";
-import { useConnect, useConnectors } from "wagmi";
 import ConnectButton from "@/components/ehex-ui/connect-button";
 import Link from "next/link";
 

@@ -7,9 +7,17 @@ export default function ConnectButton() {
     <ConnectKitButton.Custom>
     {({ isConnected, show, address, truncatedAddress }) => {
       return (
-        <Button className="w-full rounded-xl" size="lg" onClick={show}>
-        Connect
-      </Button>
+        <>
+            {isConnected ? (
+            <Button className="w-full rounded-xl" size="lg" onClick={show}>
+                <span className="font-mono" aria-label={address}>{truncatedAddress}</span>
+            </Button>
+            ) : (
+            <Button className="w-full rounded-xl" size="lg" onClick={show}>
+                Connect
+            </Button>
+            )}
+        </>
       )
     }}
     </ConnectKitButton.Custom>
