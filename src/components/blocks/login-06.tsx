@@ -1,8 +1,12 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { JSX, SVGProps } from "react";
+import { useConnect, useConnectors } from "wagmi";
+import ConnectButton from "@/components/ehex-ui/connect-button";
+import Link from "next/link";
 
 const Logo = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
   <svg
@@ -28,51 +32,30 @@ const Logo = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
 
 export default function Login06() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <Card className="w-full max-w-sm rounded-4xl px-6 py-10 pt-14">
-        <CardContent className="">
+    <div className="flex items-center justify-center min-h-screen" style={{ background: "linear-gradient(30deg, #ffdb01 0%, #ff851f 30%, #ff3d3d 52%, #ff0f6f 70%, #f0f 100%)" }}>
+      <Card className="w-full max-w-sm rounded-4xl px-6 py-10 pt-14 bg-background/80 backdrop-blur-md">
+        <CardContent>
           <div className="flex flex-col items-center space-y-8">
             <Logo />
 
             <div className="space-y-2 text-center">
               <h1 className="text-3xl font-semibold text-foreground">
-                Welcome back!
+                Welcome!
               </h1>
               <p className="text-muted-foreground text-sm">
-                First time here?{" "}
-                <a href="#" className="text-foreground hover:underline">
-                  Sign up for free
-                </a>
+                Just looking around?{" "}
+                <Button asChild variant="link" className="inline p-0 h-auto">
+                  <Link href="/dashboard" className="text-foreground hover:underline">
+                    Go to the dashboard
+                  </Link>
+                </Button>
               </p>
             </div>
 
             <div className="w-full space-y-4">
-              <Input
-                type="email"
-                placeholder="Your email"
-                className="w-full rounded-xl"
-              />
               <div className="flex flex-col gap-2">
-                <Button className="w-full rounded-xl" size="lg">
-                  Send me the magic link
-                </Button>
-                <Button
-                  variant="link"
-                  className="w-full text-sm text-muted-foreground"
-                >
-                  Sign in using password
-                </Button>
+                <ConnectButton />
               </div>
-
-              <div className="flex items-center gap-4 py-2">
-                <Separator className="flex-1" />
-                <span className="text-sm text-muted-foreground">OR</span>
-                <Separator className="flex-1" />
-              </div>
-
-              <Button variant="outline" className="w-full rounded-xl" size="lg">
-                Single sign-on (SSO)
-              </Button>
             </div>
 
             <p className="text-center text-xs w-11/12 text-muted-foreground">
